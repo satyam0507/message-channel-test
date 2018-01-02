@@ -4,6 +4,7 @@ var babel = require('babelify');
 var browserify = require('browserify');
 var buffer = require('vinyl-buffer');
 var gulp = require('gulp');
+var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
 var runSequence = require('run-sequence');
@@ -48,6 +49,9 @@ function _bundle(option) {
         .bundle()
         .pipe(source(option.distName))
         .pipe(buffer())
+        .pipe(uglify({
+            compress: false
+        }))
         .pipe(sourcemaps.init({
             loadMaps: true,
         }))
