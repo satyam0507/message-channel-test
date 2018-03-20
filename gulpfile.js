@@ -17,7 +17,7 @@ gulp.task('default', () => {
 
 gulp.task('buildApi', () => {
     return _bundle({
-        entries: ['./api/windowMessanger.js'],
+        entries: ['./api/window-messenger.js'],
         standalone: 'windowMessanger',
         distName: 'windowMessanger.js',
         distFolder: './dist/api/'

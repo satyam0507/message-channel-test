@@ -1,6 +1,7 @@
 import {
-    WindowMessanger
+    WindowMessenger
 } from '../../dist/api/windowMessanger.js';
 
-var _WindowMessanger = new WindowMessanger();
-_WindowMessanger.listen();
+const _WindowMessenger = new WindowMessenger();
+const _origin = [window.location.origin];
+_WindowMessenger.listen(_origin);
