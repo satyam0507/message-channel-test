@@ -7,5 +7,6 @@ window.addEventListener('load', function() {
     const _origin = [window.location.origin];
     const _remoteContentWindow = document.getElementById('iframe').contentWindow;
     _WindowMessenger.listen(_origin);
-    _WindowMessenger.connect(_remoteContentWindow, _origin).then((r) => console.log(r)).catch((e) => console.log(e));
+    _WindowMessenger.connect(_remoteContentWindow, _origin);
+    _WindowMessenger.send('abc',{123:'123'}).then((r)=>console.log(r)).catch((e)=>console.log(e));
 })
